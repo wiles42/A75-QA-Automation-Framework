@@ -9,15 +9,9 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class Homework16 extends BaseTest {
-    @Test
+   @Test
     public  void  registrationPage(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-
-        //Preconditions
-        WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        String url = "https://qa.koel.app";
+       String url = "https://qa.koel.app";
         driver.get(url);
 
         //Test Steps
