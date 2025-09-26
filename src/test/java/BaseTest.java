@@ -92,4 +92,19 @@ public class BaseTest {
         search.clear();
         search.sendKeys(song);
     }
+
+    public boolean pauseBtn() {
+        WebElement pauseButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'pause']"));
+        return true;
+    }
+
+    public void playBtn() {
+        WebElement playButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'play']"));
+        playButton.click();
+    }
+
+    public void nextBtn() {
+        WebElement nextSong = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//i[@title= 'Play next song']"));
+        nextSong.click();
+    }
 }
