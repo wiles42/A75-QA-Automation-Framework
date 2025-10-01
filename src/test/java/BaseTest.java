@@ -4,14 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.*;
 
+import java.net.URL;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 public class BaseTest {
     public WebDriver driver;
@@ -22,7 +21,8 @@ public class BaseTest {
         WebDriverManager.chromedriver().setup();
     }
     @BeforeMethod
-    public void setupBrowser(){
+    @Parameters({"BaseUrl"})
+    public void setupBrowser(String BaseURL){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
 
@@ -31,7 +31,8 @@ public class BaseTest {
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        navigatetoURL();
+        url = BaseURL;
+        navigatetoURL(url);
     }
 
     @AfterMethod
@@ -57,9 +58,9 @@ public class BaseTest {
         emailField.sendKeys(email);
     }
 
-    public void navigatetoURL() {
-        url = "https://qa.koel.app";
-        driver.get(url);
+    public void navigatetoURL(String URL) {
+        //url = "https://qa.koel.app";
+        driver.get(URL);
     }
 
     public String successShow() {
