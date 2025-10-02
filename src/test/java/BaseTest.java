@@ -46,19 +46,22 @@ public class BaseTest {
     }
 
     public void submitBtn() throws InterruptedException {
-        WebElement submitBtn = driver.findElement(By.cssSelector("button[type='submit']"));
+        //WebElement submitBtn = driver.findElement(By.cssSelector("button[type='submit']"));
+        WebElement submitBtn = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
         submitBtn.click();
         Thread.sleep(2000);
 
     }
 
     public void providePassword(String password) {
-        WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
+        //WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
+       WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='password']")));
         passwordField.sendKeys(password);
     }
 
     public void provideEmail(String  email) {
-        WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
+        //WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
+        WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='email']")));
         emailField.clear();
         emailField.sendKeys(email);
     }
@@ -101,40 +104,51 @@ public class BaseTest {
 
     public void searchSong(String song) {
        // WebElement search = driver.findElement(By.xpath("//input[@type= 'search']"));
-        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type='search']")));
+        WebElement search = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@type= 'search']")));
         search.clear();
         search.sendKeys(song);
     }
 
     //homework18
     public boolean pauseBtn() {
-        WebElement pauseButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'pause']"));
+        //WebElement pauseButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'pause']"));
+        WebElement pauseButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'pause']")));
+
         return true;
     }
 
     public void playBtn() {
-        WebElement playButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'play']"));
+        //WebElement playButton = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'play']"));
+        WebElement playButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//footer[@id= 'mainFooter']//span[@class= 'play']")));
         playButton.click();
     }
 
     public void nextBtn() {
-        WebElement nextSong = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//i[@title= 'Play next song']"));
+      // WebElement nextSong = driver.findElement(By.xpath("//footer[@id= 'mainFooter']//i[@title= 'Play next song']"));
+        WebElement nextSong = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//footer[@id='mainFooter']//i[@title='Play next song']")));
         nextSong.click();
     }
 
     // deletePlaylist homework19
     public String deletedPlaylistMessage() {
-        WebElement deletedMessage = driver.findElement(By.xpath("//div[@class= 'success show']"));
+       // WebElement deletedMessage = driver.findElement(By.xpath("//div[@class='success show']"));
+        WebElement deletedMessage = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='success show']")));
         return deletedMessage.getText();
     }
 
     public void deletethePlaylist() throws InterruptedException {
-        WebElement deletePlaylist = driver.findElement(By.xpath("//button[@class= 'del btn-delete-playlist']"));
+        //WebElement deletePlaylist = driver.findElement(By.xpath("//button[@class= 'del btn-delete-playlist']"));
+        WebElement deletePlaylist = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//button[@class='del btn-delete-playlist']")));
         deletePlaylist.click();
+    }
+    public void okButton () {
+        WebElement okBtn = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='ok']")));
+        okBtn.click();
     }
 
     public void clickPlaylist() {
-        WebElement wilesplaylist = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
-        wilesplaylist.click();
+        //WebElement wilesplaylist = driver.findElement(By.cssSelector(".playlist:nth-child(3)"));
+        WebElement wilesPlaylist = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".playlist:nth-child(3)")));
+        wilesPlaylist.click();
     }
 }

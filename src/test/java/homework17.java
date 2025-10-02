@@ -14,15 +14,10 @@ String ExpectedString = "Added 1 song into \"Wiles Playlist.\"";
 
     //Steps
      searchSong("song");
-
      viewAll();
-
      clickSong();
-
      addToBtn();
-
      addToPlaylist();
-
      successShow();
 
 
