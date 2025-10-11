@@ -1,29 +1,34 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pom.LoginPage;
+import pom.PlayListPage;
 
-public class Homework19 extends BaseTest{
+
+public class Homework19 extends BaseTest {
+    private static final Logger log = LoggerFactory.getLogger(Homework19.class);
+
     @Test
-    public void deletePlaylist () throws InterruptedException {
-        //expected string for deleted playlist message
+    public  void secondDeletePlaylist ()  {
         String expectedString = "Deleted playlist \"Wiles Playlist.\"";
-       //preconditions (login)
-       // provideEmail("wiley.griffin@testpro.io");
-        //providePassword("KUgY8Y1p");
-        // submitBtn();
+        LoginPage loginPage = new LoginPage(driver);
+        PlayListPage playListPage = new PlayListPage(driver);
+
+        //Preconditions
+      loginPage.login();
 
 
         //Steps
-        //find and click playlist
-        clickPlaylist();
+      playListPage.clickPlaylist();
+      playListPage.deleteThePlaylist();
+      //playListPage.okButton(); .. only if there is a song in playlist!
 
-        //Click "x Playlist"
-        deletethePlaylist();
+      //Verification
+      playListPage.deletedPlaylistMessage();
 
-        //Verify "Deleted playlist Wiles Playlist"
-        deletedPlaylistMessage();
-
-        Assert.assertEquals(deletedPlaylistMessage(), expectedString);
-
+      Assert.assertEquals(playListPage.deletedPlaylistMessage(), expectedString);
     }
-
 }
+
+

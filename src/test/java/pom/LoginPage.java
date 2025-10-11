@@ -11,6 +11,7 @@ public class LoginPage extends BasePage {
     By emailField = By.cssSelector("input[type='email']");
     By passwordField = By.cssSelector("input[type='password']");
     By submitBtn = By.cssSelector("button[type='submit']");
+    By registrationLink = By.cssSelector("a[href='registration']");
     public void provideEmail(String email){
         findElement(emailField).sendKeys(email);
     }
@@ -26,6 +27,10 @@ public class LoginPage extends BasePage {
         provideEmail("wiley.griffin@testpro.io");
         providePassword("KUgY8Y1p");
         clickSubmit();
+    }
+    //Homework 16
+    public void registration (){
+        findElement(registrationLink).click();
     }
 
 

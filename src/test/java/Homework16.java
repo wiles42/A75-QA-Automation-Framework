@@ -6,24 +6,22 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pom.LoginPage;
 
 import java.time.Duration;
 
 public class Homework16 extends BaseTest {
    @Test
     public  void  registrationPage(){
-       String url = "https://qa.koel.app";
-        driver.get(url);
+       //Preconditions
+       LoginPage loginPage = new LoginPage(driver);
+       String regUrl = "https://qa.koel.app/registration";
 
-        //Test Steps
-       // WebElement registration = driver.findElement(By.cssSelector("a[href='registration']"));
-       WebElement registration = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a[href='registration']")));
-        registration.click();
-        String regUrl = "https://qa.koel.app/registration";
-        
-        //Expected Result
+       //Test Steps
+       loginPage.registration();
+
+       //Expected Result
         Assert.assertEquals(driver.getCurrentUrl(), regUrl);
 
-        driver.quit();
-    }
+   }
 }

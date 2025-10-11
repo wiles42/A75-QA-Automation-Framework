@@ -30,4 +30,12 @@ public class BasePage {
     public  void doubleClick (By locator) {
         actions.doubleClick(findElement(locator)).perform();
     }
+    public void presenceOfElement(By locator){
+        WebElement element = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        actions.moveToElement(element).perform();
+        wait.until(ExpectedConditions.elementToBeClickable(element));
+        element.click();
+
+    }
 }
+

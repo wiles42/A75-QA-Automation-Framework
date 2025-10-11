@@ -1,23 +1,23 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pom.HomePage;
+import pom.LoginPage;
 
 public class homework18 extends BaseTest {
     @Test
     public void playSong() throws InterruptedException {
+        HomePage homePage = new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+
         //Preconditions
-       // provideEmail("wiley.griffin@testpro.io");
-       // providePassword("KUgY8Y1p");
-        //submitBtn();
+       loginPage.login();
 
         //Steps
+        homePage.clickNextBtn();
+        homePage.clickPlay();
 
-        //Click Play next song
-        nextBtn();
-        //Click Play button
-        playBtn();
-        //Verify song is playing
-        pauseBtn();
-        Assert.assertTrue(pauseBtn());
+        //Verification
+        Assert.assertTrue(homePage.pauseBtnShowing());
 
 
     }

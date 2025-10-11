@@ -20,8 +20,9 @@ public class Homework22 extends BaseTest {
        //Steps
         playListPage.doubleClick();
         playListPage.newPlaylistName("Wiley Playlist");
-        Assert.assertEquals(successShow(), updatedMsg);
+        Assert.assertEquals(playListPage.newSuccessShow(), updatedMsg);
 
     }
+
 
 }
