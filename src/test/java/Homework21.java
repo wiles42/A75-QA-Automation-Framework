@@ -1,3 +1,5 @@
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pagefactory.BasePage;
@@ -8,6 +10,8 @@ import pagefactory.LoginPage;
  * @author wiles42
  */
 public class Homework21 extends BaseTest{
+    private static final Logger log = LoggerFactory.getLogger(Homework21.class);
+
     @Test
     public void renamePlaylist() {
         BasePage basePage = new BasePage(driver);
@@ -19,6 +23,7 @@ public class Homework21 extends BaseTest{
         loginPage.provideEmail("wiley.griffin@testpro.io")
                 .providePassword("KUgY8Y1p")
                 .clickSubmit();
+
        
        //Steps
         homePage.dblClickPlaylist();
