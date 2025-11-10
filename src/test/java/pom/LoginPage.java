@@ -8,7 +8,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver givenDriver){
         super(givenDriver);
     }
-    By emailField = By.cssSelector("input[type='email']");
+    public By emailField = By.cssSelector("input[type='email']");
     By passwordField = By.cssSelector("input[type='password']");
     By submitBtn = By.cssSelector("button[type='submit']");
     By registrationLink = By.cssSelector("a[href='registration']");
