@@ -27,9 +27,10 @@ test {
         //suites "src/test/resources/TestNG.xml"
         //suites "src/test/resources/SmokeTests.xml"
         //suites "src/test/resources/RegressionTests.xml"
-        suites "src/test/resources/LogInTests.xml"
+       // suites "src/test/resources/LogInTests.xml"
         //suites "src/test/resources/LogOutTests.xml"
         //suites "src/test/resources/InfoPanelTests.xml"
+        suites "src/test/resources/ChangePassword.xml"
 
         systemProperty "browser", System.getProperty("browser")
         //suites "src/test/resources/NewConfig.xml"

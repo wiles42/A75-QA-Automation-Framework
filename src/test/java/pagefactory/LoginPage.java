@@ -1,9 +1,13 @@
 package pagefactory;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.time.Duration;
 
 /**
  * @author wiles42
@@ -23,6 +27,8 @@ public class LoginPage extends BasePage {
     WebElement redHighlight;
     @FindBy(xpath = "//a[@title='Log student out']")
     WebElement logOutBtn;
+    @FindBy(css = "form.error[data-testid='login-form']")
+    WebElement errorMessage;
 
     public LoginPage(WebDriver givenDriver) {
         super(givenDriver);
@@ -39,6 +45,7 @@ public class LoginPage extends BasePage {
     }
 
     public LoginPage clickSubmit() {
+        wait.until(ExpectedConditions.elementToBeClickable(submitBtn));
         submitBtn.click();
         return this;
     }
@@ -62,4 +69,17 @@ public class LoginPage extends BasePage {
         wait.until(ExpectedConditions.visibilityOf(logOutBtn));
         return true;
     }
+    public boolean formError() {
+    try{
+        wait.withTimeout(Duration.ofSeconds(5)).
+                until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("form[data-testid='login-form']")));
+        return true;
+    }
+    catch (TimeoutException e){
+        return false;
+    }
+    }
+
+
+
 }
