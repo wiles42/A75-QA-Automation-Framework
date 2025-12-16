@@ -33,8 +33,8 @@ test {
         //suites "src/test/resources/ChangePassword.xml"
        // suites "src/test/resources/NewPlaylistCreation.xml"
        // suites "src/test/resources/ChangeEmailTest.xml"
-        suites "src/test/resources/FavoritesTest.xml"
-       // suites "src/test/resources/SearchTest.xml"
+        //suites "src/test/resources/FavoritesTest.xml"
+        suites "src/test/resources/SearchTest.xml"
 
 
         systemProperty "browser", System.getProperty("browser")
