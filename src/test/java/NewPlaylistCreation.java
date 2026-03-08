@@ -13,7 +13,7 @@ public class NewPlaylistCreation extends BaseTest {
         MyPlaylistPage myPlaylistPage = new MyPlaylistPage(getDriver());
 
         loginPage.provideEmail("wiley.griffin@testpro.io");
-        loginPage.providePassword("guitarl3ss0n1!");
+        loginPage.providePassword("GuitarL3ss0n1!");
         loginPage.clickSubmit();
 
         myPlaylistPage.clickPlaylistBtn();

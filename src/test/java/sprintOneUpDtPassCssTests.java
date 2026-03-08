@@ -19,7 +19,7 @@ public class sprintOneUpDtPassCssTests extends BaseTest {
         s1LoginPageCss.clckSubmt();
         s1ProfilePrefPageCss.clkProfPge();
         s1ProfilePrefPageCss.currentPassword("GuitarL3ss0n1!");
-        s1ProfilePrefPageCss.newPassword("guitarl322s0n1!");
+        s1ProfilePrefPageCss.newPassword("guitarL322s0n1!");
         s1ProfilePrefPageCss.clkSave();
         Assert.assertTrue(s1ProfilePrefPageCss.errMsg()); // bug this is supposed pass no upper case letter failed test
 
