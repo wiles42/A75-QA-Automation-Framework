@@ -28,7 +28,7 @@ public class LoginPage extends BasePage {
         PlayListPage playListPage = new PlayListPage(driver);
         String updatedMsg = "Updated playlist \"Wiley Playlist.\"";
         provideEmail("wiley.griffin@testpro.io");
-        providePassword("KUgY8Y1p");
+        providePassword("GuitarL3ss0n1!");
         clickSubmit();
     }
     //Homework 16

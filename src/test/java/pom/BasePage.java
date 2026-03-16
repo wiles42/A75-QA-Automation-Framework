@@ -35,7 +35,7 @@ public class BasePage {
         actions.moveToElement(element).perform();
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
-
     }
+
 }
 
