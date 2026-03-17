@@ -42,6 +42,6 @@ public class S2Favorites extends BaseTest {
         loginPage.login();
         favoritesPage.goToFavorites();
         favoritesPage.unFavoriteAllSongs();
-        Assert.assertTrue(favoritesPage.noFavoritesImg().isDisplayed());
+    Assert.assertTrue(favoritesPage.noFavoritesImg().isDisplayed()); //perfect!
     }
 }

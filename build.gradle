@@ -38,7 +38,8 @@ test {
         //suites "src/test/resources/SprintOnePsswrd.xml"
         //suites "src/test/resources/SprintOneAccountCreation.xml"
         //suites "src/test/resources/SprintOneNewPlaylist.xml"
-        suites "src/test/resources/S2Favorites.xml"
+        //suites "src/test/resources/S2Favorites.xml"
+        suites "src/test/resources/S2Search.xml"
 
 
 
